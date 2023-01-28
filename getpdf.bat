@@ -1,4 +1,1 @@
-xelatex nsfc-temp.tex
-bibtex  nsfc-temp.aux
-xelatex nsfc-temp.tex
-xelatex nsfc-temp.tex
+latexmk -xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1  nsfc-temp.tex
