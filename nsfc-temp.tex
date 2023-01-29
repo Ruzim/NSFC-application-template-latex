@@ -16,6 +16,7 @@
 \usepackage{wasysym}
 \usepackage[unicode]{hyperref} %提供跳转链接
 \usepackage{geometry} %改改尺寸
+
 %\geometry{left=3.23cm,right=3.23cm,top=2.54cm,bottom=2.54cm}
 %latex的页边距比word的视觉效果要大一些，稍微调整一下
 %\geometry{left=2.95cm,right=2.95cm,top=2.54cm,bottom=2.54cm}%2020
@@ -27,8 +28,9 @@
 \addto\captionsenglish{
     \renewcommand{\contentsname}{目录}
     \renewcommand{\listfigurename}{插图目录}
-    \renewcommand{\listtablename}{表格目录}
-    \renewcommand{\refname}{参考文献}
+    \renewcommand{\listtablename}{表格}
+    %\renewcommand{\refname}{\sihao 参考文献}
+    \renewcommand{\refname}{\sihao \kaishu \leftline{参考文献}} %这几个字默认字号稍大，改成四号字，楷书，居左(默认居中) 根据喜好自行修改，官方模板未作要求
     \renewcommand{\abstractname}{摘要}
     \renewcommand{\indexname}{索引}
     \renewcommand{\tablename}{表}
@@ -63,13 +65,16 @@
 \end{center}
 
 {\sihao \kaishu 参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。{\color{MsBlue} \bfseries 请勿删除或改动下述提纲标题及括号中的文字。}}
-{\color{MsBlue} \subsection{\sihao \kaishu （一）立项依据与研究内容(建议8000字以下)： }}
+\vskip -5mm
+{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （一）立项依据与研究内容(建议8000字以下)： }}
 
 {\sihao \kaishu \color{MsBlue} {\bfseries 1. 项目的立项依据}（研究意义、国内外研究现状及发展动态分析，需结合科学研究发展趋势来论述科学意义；或结合国民经济和社会发展中迫切需要解决的关键科技问题来论述其应用前景。附主要参考文献目录）；}
 
 对于习惯用 \LaTeX 写文档的同学们，一个写基金申请书的模版可能有参考作用。因此我做了这个2021年面上项目申请书正文部分模版。祝大家基金申请顺利！
 
 2023-01-20： 根据2023年面上项目申请书正文的官方MsWord模板，对本模板的字号和少量蓝色文字做了更新。
+
+2023-01-29： 根据几位老师的建议，对section的缩进，“参考文献”四个字的大小、字体和居左等做了调整。
 
 \begin{figure}[!th]
 \begin{center}
@@ -106,6 +111,7 @@
 
 %对作者个数作了限制以适合申请书
 %当作者个数小于等于5个时，予以全部保留，当作者个数大于5个时，只保留3个，加et al
+
 \bibliographystyle{ieeetrNSFC}
 \bibliography{myexample}
 \newpage
@@ -118,9 +124,11 @@
 
 \begin{itemize}
 \item 中文的处理。
-\item 参考文献的样式\cite{John1997,Smith1900,Piter1992}。
+\item 参考文献\cite{John1997,Smith1900,Piter1992}的样式。
 \item 官方word模版中蓝色的获得。
 \end{itemize}
+
+
 
 
 {\sihao \color{MsBlue} \kaishu {\bfseries 3．拟采取的研究方案及可行性分析} （包括研究方法、技术路线、实验手段、关键技术等说明）；}
@@ -136,7 +144,7 @@
 
 拟组织研讨会1次，将这个模版广而告之。但是目前还没有经费。
 
-{\color{MsBlue} \subsection{\sihao \kaishu （二）研究基础与工作条件 }}
+{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （二）研究基础与工作条件 }}
 
 {\sihao \color{MsBlue} \kaishu {\bfseries 1．研究基础}（与本项目相关的研究工作积累和已取得的研究工作成绩）；}
 
@@ -154,7 +162,7 @@
 
 不告诉你。
 
-{\color{MsBlue} \subsection{\sihao \kaishu （三）其他需要说明的问题 }}
+{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （三）其他需要说明的问题 }}
 
 {\sihao \color{MsBlue} \kaishu 1. 申请人同年申请不同类型的国家自然科学基金项目情况（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系）。 }
 
