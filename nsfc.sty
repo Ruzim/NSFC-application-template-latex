@@ -1,0 +1,115 @@
+\usepackage[english]{babel} %支持混合语言
+\usepackage{xcolor}
+\usepackage{geometry} %改改尺寸
+
+%\geometry{left=3.23cm,right=3.23cm,top=2.54cm,bottom=2.54cm}
+%latex的页边距比word的视觉效果要大一些，稍微调整一下
+%\geometry{left=2.95cm,right=2.95cm,top=2.54cm,bottom=2.54cm}%2020
+\geometry{left=2.95cm,right=2.95cm,top=2.54cm,bottom=2.54cm}
+\pagestyle{empty}
+\setcounter{secnumdepth}{-2} %不让那些section和subsection自带标号，标号格式自己掌握
+\definecolor{MsBlue}{RGB}{0,112,192} %Ms Word 的蓝色和latex xcolor包预定义的蓝色不一样。通过屏幕取色得到。
+% Renaming floats with babel
+\addto\captionsenglish{
+	\renewcommand{\contentsname}{目录}
+	\renewcommand{\listfigurename}{插图目录}
+	\renewcommand{\listtablename}{表格}
+	%\renewcommand{\refname}{\sihao 参考文献}
+	\renewcommand{\refname}{\sihao \kaishu \leftline{参考文献}} %这几个字默认字号稍大，改成四号字，楷书，居左(默认居中) 根据喜好自行修改，官方模板未作要求
+	\renewcommand{\abstractname}{摘要}
+	\renewcommand{\indexname}{索引}
+	\renewcommand{\tablename}{表}
+	\renewcommand{\figurename}{图}
+} %把Figure改成‘图’，reference改成‘参考文献’。如此处理是为了避免和babel包冲突。
+%定义字号
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{26pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{22pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+%字号对照表
+%二号 21pt
+%四号 14
+%小四 12
+%五号 10.5
+%设置行距 1.5倍
+\renewcommand{\baselinestretch}{1.5}
+\XeTeXlinebreaklocale "zh"           % 中文断行
+
+\newcommand{\makehead}{
+	\begin{center}
+		{\sanhao \kaishu \bfseries 报告正文}
+	\end{center}
+	
+	{\sihao \kaishu 参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。{\color{MsBlue} \bfseries 请勿删除或改动下述提纲标题及括号中的文字。}}
+}
+
+\newcommand{\makebasis}{
+	\vskip -5mm
+	{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （一）立项依据与研究内容(建议8000字以下)： }}
+	
+	{\sihao \kaishu \color{MsBlue} 1.{\bfseries 项目的立项依据}（研究意义、国内外研究现状及发展动态分析，需结合科学研究发展趋势来论述科学意义；或结合国民经济和社会发展中迫切需要解决的关键科技问题来论述其应用前景。附主要参考文献目录）；}
+}
+
+\newcommand{\makecontent}{
+	\newpage
+	
+	{\sihao \color{MsBlue} \kaishu 2． {\bfseries 项目的研究内容、研究目标，以及拟解决的关键科学问题}（此部分为重点阐述内容）；}
+}
+
+\newcommand{\makeproposal}{
+	{\sihao \color{MsBlue} \kaishu 3．{\bfseries 拟采取的研究方案及可行性分析} （包括研究方法、技术路线、实验手段、关键技术等说明）；}
+}
+
+\newcommand{\makeinnovation}{
+	{\sihao \color{MsBlue} \kaishu 4．{\bfseries 本项目的特色与创新之处；}}
+}
+
+\newcommand{\makeplan}{
+	{\sihao \color{MsBlue} \kaishu 5．{\bfseries 年度研究计划及预期研究结果}（包括拟组织的重要学术交流活动、国际合作与交流计划等）。}
+}
+
+\newcommand{\makeresearchbase}{
+	\vskip -5mm %可以通过类似的命令微调行距以使得排版美观
+	
+	{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （二）研究基础与工作条件 }}
+	
+	{\sihao \color{MsBlue} \kaishu 1．{\bfseries 研究基础}（与本项目相关的研究工作积累和已取得的研究工作成绩）；}
+}
+
+\newcommand{\makerequirement}{
+	{\sihao \color{MsBlue} \kaishu 2．{\bfseries 工作条件}（包括已具备的实验条件，尚缺少的实验条件和拟解决的途径，包括利用国家实验室、国家重点实验室和部门重点实验室等研究基地的计划与落实情况）；}
+}
+
+\newcommand{\makeongoing}{
+	{\sihao \color{MsBlue} \kaishu 3．{\bfseries 正在承担的与本项目相关的科研项目情况}（申请人和主要参与者正在承担的与本项目相关的科研项目情况，包括国家自然科学基金的项目和国家其他科技计划项目，要注明项目的资助机构、项目类别、批准号、项目名称、获资助金额、起止年月、与本项目的关系及负责的内容等）；}
+}
+
+\newcommand{\makecompletion}{
+	{\sihao \color{MsBlue} \kaishu 4．{\bfseries 完成国家自然科学基金项目情况}（对申请人负责的前一个已资助期满的科学基金项目（项目名称及批准号）完成情况、后续研究进展及与本申请项目的关系加以详细说明。另附该项目的研究工作总结摘要（限500字）和相关成果详细目录）。}
+}
+
+\newcommand{\makeotherprojects}{
+	{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （三）其他需要说明的问题 }}
+	
+	{\sihao \color{MsBlue} \kaishu 1. 申请人同年申请不同类型的国家自然科学基金项目情况（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系）。 }
+}
+
+\newcommand{\makeapplicantconflict}{
+	{\sihao \color{MsBlue} \kaishu 2. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在同年申请或者参与申请国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，申请或参与申请的其他项目的项目类型、项目名称、单位名称、上述人员在该项目中是申请人还是参与者，并说明单位不一致原因。}
+}
+
+\newcommand{\makeongoingconflict}{
+	{\sihao \color{MsBlue} \kaishu 3. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在与正在承担的国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，正在承担项目的批准号、项目类型、项目名称、单位名称、起止年月，并说明单位不一致原因。}
+}
+
+\newcommand{\makeothers}{
+	{\sihao \color{MsBlue} \kaishu 4. 其他。}
+}
