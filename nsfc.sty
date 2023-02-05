@@ -1,6 +1,7 @@
 \usepackage[english]{babel} %支持混合语言
 \usepackage{xcolor}
 \usepackage{geometry} %改改尺寸
+\usepackage{enumitem}
 
 %\geometry{left=3.23cm,right=3.23cm,top=2.54cm,bottom=2.54cm}
 %latex的页边距比word的视觉效果要大一些，稍微调整一下
@@ -38,6 +39,10 @@
 \newfontfamily\kaitichar{KaiTi}[AutoFakeBold] %定义楷体英文和数字。
 \NewDocumentCommand \templatefont   { } { \kaishu \kaitichar } %使用模板字体代替直接使用楷书。
 \setmainfont{Times New Roman}
+%去除item的行间隔
+\setlist{nosep}
+%使用实心圆点作为列表项的label
+\setlist[itemize,1]{label=\Large$\bullet$}
 
 %字号对照表
 %二号 21pt
