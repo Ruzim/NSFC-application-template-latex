@@ -8,7 +8,7 @@
 
 
 
-\documentclass[12pt,UTF8,AutoFakeBold,a4paper]{ctexart} %默认小四号字。允许楷体粗体。
+\documentclass[12pt,UTF8,AutoFakeBold=3,a4paper]{ctexart} %默认小四号字。允许楷体粗体。
 \usepackage[english]{babel} %支持混合语言
 \usepackage{xcolor}
 \usepackage{graphicx} 
@@ -20,7 +20,8 @@
 %\geometry{left=3.23cm,right=3.23cm,top=2.54cm,bottom=2.54cm}
 %latex的页边距比word的视觉效果要大一些，稍微调整一下
 %\geometry{left=2.95cm,right=2.95cm,top=2.54cm,bottom=2.54cm}%2020
-\geometry{left=2.95cm,right=2.95cm,top=2.54cm,bottom=2.54cm}
+%\geometry{left=2.95cm,right=2.95cm,top=2.54cm,bottom=2.54cm}
+\geometry{left=3.00cm,right=3.07cm,top=2.67cm,bottom=3.27cm}
 \pagestyle{empty}
 \setcounter{secnumdepth}{-2} %不让那些section和subsection自带标号，标号格式自己掌握
 \definecolor{MsBlue}{RGB}{0,112,192} %Ms Word 的蓝色和latex xcolor包预定义的蓝色不一样。通过屏幕取色得到。
@@ -76,13 +77,17 @@
 
 2023-01-29\&02-01： 根据几位老师的建议，对section的缩进，“参考文献”四个字的大小、字体和居左等做了调整。官方模板中阿拉伯数字不加粗，因此也做了相应的调整。
 
+
+
 \begin{figure}[!th]
 \begin{center}
-\includegraphics[width=1.8in]{fig-example.eps}
+\includegraphics[width=2in]{fig-example.eps}
 \caption{插图可以使用EPS、PNG、JPG等格式。}
 \label{fig:example}
 \end{center}
 \end{figure}
+
+2023-02-06： 根据@Readon的commits，做了如下修改：1. 更正了一处蓝字部分：``（三）其他需要说明的问题'' $\rightarrow$ ``（三）其他需要说明的情况'' 。这个非常重要！2. 设置 AutoFakeBold=3，这样楷体粗体稍微细一点，和官方模板更加接近。3. 调整了页面空白的宽度，大家可以自行微调。作为\LaTeX 菜鸟，非常感谢Readon的专业建议！更多专业的修改请见\url{https://github.com/Readon/NSFC-application-template-latex}
 
 
 
@@ -111,7 +116,7 @@
 
 %对作者个数作了限制以适合申请书
 %当作者个数小于等于5个时，予以全部保留，当作者个数大于5个时，只保留3个，加et al
-
+\newpage
 \bibliographystyle{ieeetrNSFC}
 \bibliography{myexample}
 \newpage
@@ -164,7 +169,7 @@
 
 不告诉你。
 
-{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （三）其他需要说明的问题 }}
+{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （三）其他需要说明的情况 }}
 
 {\sihao \color{MsBlue} \kaishu 1. 申请人同年申请不同类型的国家自然科学基金项目情况（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系）。 }
 
