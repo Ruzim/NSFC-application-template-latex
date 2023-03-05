@@ -2,6 +2,14 @@
 \usepackage{xcolor}
 \usepackage{geometry} %改改尺寸
 \usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{gbt7714}
+
+%调整参考文献标题格式和上下文间隔。
+\bibliographystyle{gbt7714-numerical}
+\setlength{\bibsep}{0.0pt}
+\renewcommand\bibsection{\vspace{-6ex}\section*{\refname}\vspace{-11ex}}
 
 %\geometry{left=3.23cm,right=3.23cm,top=2.54cm,bottom=2.54cm}
 %latex的页边距比word的视觉效果要大一些，稍微调整一下
@@ -9,6 +17,8 @@
 \geometry{left=3.00cm,right=3.07cm,top=2.67cm,bottom=3.27cm}
 \pagestyle{empty}
 \setcounter{secnumdepth}{-2} %不让那些section和subsection自带标号，标号格式自己掌握
+\titlespacing{\subsubsection}{2em}{1ex}{1ex} %设置小节标题前后文字间距。
+
 \definecolor{MsBlue}{RGB}{0,112,192} %Ms Word 的蓝色和latex xcolor包预定义的蓝色不一样。通过屏幕取色得到。
 % Renaming floats with babel
 \addto\captionsenglish{
@@ -41,8 +51,17 @@
 \setmainfont{Times New Roman}
 %去除item的行间隔
 \setlist{nosep}
+%使用中文字符宽度作为边界计算依据定位列表项的格式。
+\newlength{\zhcharwidth}
+\settowidth{\zhcharwidth}{\xiaosihao 中}
 %使用实心圆点作为列表项的label
-\setlist[itemize,1]{label=\Large$\bullet$}
+\setlist[itemize,1]{label=\Large$\bullet$,leftmargin=3.5\zhcharwidth}
+\setlist[enumerate]{leftmargin=0em, itemindent=3.5\zhcharwidth, listparindent=\parindent, parsep=0pt, partopsep=0pt}
+\setlist[enumerate,1]{label=\arabic*),}
+\setlist[description]{leftmargin=0em, itemindent=2\zhcharwidth}
+
+%设置题注的前后间隔。
+\captionsetup{belowskip=-1.5em, aboveskip=1ex}
 
 %字号对照表
 %二号 21pt
@@ -67,6 +86,7 @@
 	{\color{MsBlue} \subsection{\sihao \templatefont \quad （一）立项依据与研究内容(建议8000字以下)： }}
 	
 	{\sihao \templatefont \color{MsBlue} 1．{\bfseries 项目的立项依据}（研究意义、国内外研究现状及发展动态分析，需结合科学研究发展趋势来论述科学意义；或结合国民经济和社会发展中迫切需要解决的关键科技问题来论述其应用前景。附主要参考文献目录）；}
+	\vskip 2mm
 }
 
 \newcommand{\makecontent}{
