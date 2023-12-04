@@ -33,5 +33,6 @@
 作为LaTeX 菜鸟，非常感谢Readon的专业建议！更多专业的修改请见
 https://github.com/Readon/NSFC-application-template-latex
 ***
-
-
+### 2023-12-04：
+一转眼2024年的申请又要开始了。主要做了两点修改：1. 把图的caption字体调整为楷体。2. 设置AutoFakeBold=2，个人感觉这样和MsWord模板中的粗体更接近一点。等官方模板更新之后我再做相应更新。
+***
