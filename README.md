@@ -38,4 +38,5 @@ https://github.com/Readon/NSFC-application-template-latex
 ***
 ### 2023-12-30：
 改用 `GB/T 7714` (numerical) 样式以支持中文文献。 这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，这里也缩短了一些。如有需要，也可以切换回ieeetrNSFC。
+GB/T 7714 - 2015 主页：https://github.com/zepinglee/gbt7714-bibtex-style
 ***
