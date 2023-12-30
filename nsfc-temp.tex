@@ -16,6 +16,9 @@
 \usepackage{wasysym}
 \usepackage[unicode]{hyperref} %提供跳转链接
 \usepackage{geometry} %改改尺寸
+\usepackage{gbt7714}
+\usepackage{natbib}
+\setlength{\bibsep}{0.0pt}
 
 %\geometry{left=3.23cm,right=3.23cm,top=2.54cm,bottom=2.54cm}
 %latex的页边距比word的视觉效果要大一些，稍微调整一下
@@ -91,6 +94,8 @@
 
 2023-12-04：一转眼2024年的申请又要开始了。主要做了两点修改：1. 把图的caption字体调整为楷体。2. 设置AutoFakeBold=2，个人感觉这样和MsWord模板中的粗体更接近一点。等官方模板更新之后我再做相应更新。
 
+2023-12-30：改用GB/T 7714 (numerical) 样式以支持中文文献。 这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，这里也缩短了一些。如有需要，也可以切换回ieeetrNSFC。
+
 
 
 \vskip 2mm
@@ -104,7 +109,7 @@
 \begin{enumerate}
 \item 编译环境：推荐使用跨平台编译器texlive2017以后的版本，编译顺序为：xelatex+bibtex+xelatex(x2)。windows用户可以用命令行运行批处理文件getpdf.bat，linux用户可以运行runpdf。
 \item 本模版力求简单，语句自身说明问题(self explanatory）。几乎只需要修改本tex文件即可满足排版需求，没有sty cls 等文件。用户掌握最基本的\LaTeX 语句即可操作，其余的可以用搜索引擎较容易地获得。
-\item 参考文献样式：对作者个数作了限制以适合申请书，当作者个数小于等于5个时，予以全部保留，当作者个数大于5个时，只保留前3个，加et al。参考文献需要放在bib文件中。样式由ieeetrNSFC.bst控制。
+\item 参考文献样式：从2023.12.30版本开始，采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回ieeetrNSFC。
 \end{enumerate}
 
 \subsubsection{1.3 图、公式和参考文献的引用示例}
@@ -113,13 +118,13 @@
 \label{eq:ex}
 \sqrt[15]{a}=\frac{1}{2},
 \end{equation}
-我们还是用公式(\ref{eq:ex})举个数学公式的例子。同时，我们也不大可能会用到一个长得很像\LaTeX 的图，但是还是引用一下图\ref{fig:example}。图\ref{fig:example}并没有告诉我们关于Jinkela\cite{John1997,Smith1900}的任何信息，也没有透露它的产地\cite{Piter1992}。尽管如此，最近的研究表明，Feizhou非常需要Jinkela\cite{John1997}。
+我们还是用公式(\ref{eq:ex})举个数学公式的例子。同时，我们也不大可能会用到一个长得很像\LaTeX 的图，但是还是引用一下图\ref{fig:example}。图\ref{fig:example}并没有告诉我们关于Jinkela\cite{John1997,Smith1900}的任何信息，也没有透露它的产地\cite{Piter1992,grif1998}。尽管如此，最近的研究表明，Feizhou非常需要Jinkela\cite{John1997}。
 
 
-%对作者个数作了限制以适合申请书
-%当作者个数小于等于5个时，予以全部保留，当作者个数大于5个时，只保留3个，加et al
+%从2023.12.30版本开始，采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回之前版本用的ieeetrNSFC
 %\newpage
-\bibliographystyle{ieeetrNSFC}
+%\bibliographystyle{ieeetrNSFC}
+\bibliographystyle{gbt7714-numerical}
 \bibliography{myexample}
 \newpage
 
