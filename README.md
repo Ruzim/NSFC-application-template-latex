@@ -40,3 +40,5 @@ https://github.com/Readon/NSFC-application-template-latex
 改用 `GB/T 7714` (numerical) 样式以支持中文文献。 这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，这里也缩短了一些。如有需要，也可以切换回ieeetrNSFC。
 GB/T 7714 - 2015 主页：https://github.com/zepinglee/gbt7714-bibtex-style
 ***
+### 2024-12-25：
+使用 setspace 可以调整参考文献列表的行距，使其稍微紧凑一些。如果要调大行距就把 \setstretch 后面括号里的数改大看看效果。

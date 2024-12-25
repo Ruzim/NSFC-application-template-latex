@@ -18,7 +18,8 @@
 \usepackage{geometry} %改改尺寸
 \usepackage{gbt7714}
 \usepackage{natbib}
-\setlength{\bibsep}{0.0pt}
+\usepackage{setspace}
+\setlength{\bibsep}{0pt}
 
 %\geometry{left=3.23cm,right=3.23cm,top=2.54cm,bottom=2.54cm}
 %latex的页边距比word的视觉效果要大一些，稍微调整一下
@@ -70,7 +71,7 @@
 
 {\sihao \kaishu 参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。{\color{MsBlue} \bfseries 请勿删除或改动下述提纲标题及括号中的文字。}}
 \vskip -5mm
-{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （一）立项依据与研究内容(建议8000字以下)： }}
+{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （一）立项依据与研究内容(建议8000字以下)：}}%\textnormal{\kaishu 青年基金这句不加粗 }} 
 
 {\sihao \kaishu \color{MsBlue} 1.{\bfseries 项目的立项依据}（研究意义、国内外研究现状及发展动态分析，需结合科学研究发展趋势来论述科学意义；或结合国民经济和社会发展中迫切需要解决的关键科技问题来论述其应用前景。附主要参考文献目录）；}
 
@@ -95,6 +96,8 @@
 2023-12-04：一转眼2024年的申请又要开始了。主要做了两点修改：1. 把图的caption字体调整为楷体。2. 设置AutoFakeBold=2，个人感觉这样和MsWord模板中的粗体更接近一点。等官方模板更新之后我再做相应更新。
 
 2023-12-30：改用GB/T 7714 (numerical) 样式以支持中文文献。 这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，这里也缩短了一些。如有需要，也可以切换回ieeetrNSFC。
+
+2024-12-25: 使用 setspace 可以调整参考文献列表的行距，使其稍微紧凑一些。如果要调大行距就把 setstretch 后面括号里的数改大看看效果。
 
 
 
@@ -124,8 +127,9 @@
 %从2023.12.30版本开始，采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回之前版本用的ieeetrNSFC
 %\newpage
 %\bibliographystyle{ieeetrNSFC}
+{\setstretch{1.3}
 \bibliographystyle{gbt7714-numerical}
-\bibliography{myexample}
+\bibliography{myexample}}
 \newpage
 
 {\sihao \color{MsBlue} \kaishu 2． {\bfseries 项目的研究内容、研究目标，以及拟解决的关键科学问题}（此部分为重点阐述内容）；}
