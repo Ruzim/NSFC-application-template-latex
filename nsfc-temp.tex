@@ -1,6 +1,7 @@
 %!TEX program = xelatex
 % 编译顺序: xelatex -> bibtex -> xelatex -> xelatex
-% 国家自然科学基金NSFC面上项目申请书正文模板（2023年版）version1.0
+% 国家自然科学基金NSFC面上项目申请书正文模板（2026年版）
+% version1.0
 % 声明：
 % 注意！！！非国家自然科学基金委官方模版！！！由个人根据官方MsWord模版制作。本模版的作者尽力使本模版和官方模版生成的PDF文件视觉效果大致一样，然而，并不保证本模版有用，也不对使用本模版造成的任何直接或间接后果负责。 不得将本模版用于商用或获取经济利益。本模版可以自由修改以满足用户自己的需要。但是如果要传播本模版，则只能传播未经修改的版本。使用本模版意味着同意上述声明。
 % 强烈建议自己对照官方MsWord模板确认格式和文字是否一致，尤其是蓝字部分。
@@ -13,6 +14,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx} 
 \usepackage{amsmath} %更多数学符号
+\usepackage{enumitem}
 \usepackage{wasysym}
 %\usepackage[unicode]{hyperref} %提供跳转链接
 \usepackage{geometry} %改改尺寸
@@ -25,22 +27,23 @@
 %latex的页边距比word的视觉效果要大一些，稍微调整一下
 %\geometry{left=2.95cm,right=2.95cm,top=2.54cm,bottom=2.54cm}%2020
 %\geometry{left=2.95cm,right=2.95cm,top=2.54cm,bottom=2.54cm}
-\geometry{left=3.00cm,right=3.07cm,top=2.67cm,bottom=3.27cm}
+%\geometry{left=3.08cm,right=3.09cm,top=2.67cm,bottom=3.27cm}
+\geometry{left=3.12cm,right=3.12cm,top=2.67cm,bottom=3.27cm}
 \pagestyle{empty}
 \setcounter{secnumdepth}{-2} %不让那些section和subsection自带标号，标号格式自己掌握
 \definecolor{MsBlue}{RGB}{0,112,192} %Ms Word 的蓝色和latex xcolor包预定义的蓝色不一样。通过屏幕取色得到。
 % Renaming floats with babel
 \addto\captionsenglish{
-    \renewcommand{\contentsname}{目录}
-    \renewcommand{\listfigurename}{插图目录}
-    \renewcommand{\listtablename}{表格}
-    %\renewcommand{\refname}{\sihao 参考文献}
-    \renewcommand{\refname}{\sihao \kaishu \leftline{参考文献}} %这几个字默认字号稍大，改成四号字，楷书，居左(默认居中) 根据喜好自行修改，官方模板未作要求
-    \renewcommand{\abstractname}{摘要}
-    \renewcommand{\indexname}{索引}
-    \renewcommand{\tablename}{表}
-    \renewcommand{\figurename}{图}
-    } %把Figure改成‘图’，reference改成‘参考文献’。如此处理是为了避免和babel包冲突。
+	\renewcommand{\contentsname}{目录}
+	\renewcommand{\listfigurename}{插图目录}
+	\renewcommand{\listtablename}{表格}
+	%\renewcommand{\refname}{\sihao 参考文献}
+	\renewcommand{\refname}{\sihao \kaishu \leftline{参考文献}} %这几个字默认字号稍大，改成四号字，楷书，居左(默认居中) 根据喜好自行修改，官方模板未作要求
+	\renewcommand{\abstractname}{摘要}
+	\renewcommand{\indexname}{索引}
+	\renewcommand{\tablename}{表}
+	\renewcommand{\figurename}{图}
+} %把Figure改成‘图’，reference改成‘参考文献’。如此处理是为了避免和babel包冲突。
 %定义字号
 \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
 \newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
@@ -61,146 +64,135 @@
 %五号 10.5
 %设置行距 1.5倍
 \renewcommand{\baselinestretch}{1.5}
-\XeTeXlinebreaklocale "zh"           % 中文断行
+\XeTeXlinebreaklocale "zh"           % 中文断行，如果编译器报错就注释掉
 
 %%%% 正文开始 %%%%
 \begin{document}
-\begin{center}
-{\sanhao \kaishu \bfseries 报告正文}
-\end{center}
-
-{\sihao \kaishu 参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。{\color{MsBlue} \bfseries 请勿删除或改动下述提纲标题及括号中的文字。}}
-\vskip -5mm
-{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （一）立项依据与研究内容(建议8000字以下)：}}%\textnormal{\kaishu 青年基金这句不加粗 }} 
-
-{\sihao \kaishu \color{MsBlue} 1.{\bfseries 项目的立项依据}（研究意义、国内外研究现状及发展动态分析，需结合科学研究发展趋势来论述科学意义；或结合国民经济和社会发展中迫切需要解决的关键科技问题来论述其应用前景。附主要参考文献目录）；}
-
-对于习惯用 \LaTeX 写文档的老师和同学们，一个写基金申请书的模版可能有参考作用。因此我做了这个{\bfseries \color{Bittersweet} 面上项目}申请书正文部分模版，供参考。
-
-2023-01-20： 根据2023年面上项目申请书正文的官方MsWord模板，对本模板的字号和少量蓝色文字做了更新。
-
-2023-01-29\&02-01： 根据几位老师的建议，对section的缩进，“参考文献”四个字的大小、字体和居左等做了调整。官方模板中阿拉伯数字不加粗，因此也做了相应的调整。
-
-
-
-\begin{figure}[!th]
-\begin{center}
-\includegraphics[width=2in]{fig-example.eps}
-\caption{{\kaishu 插图可以使用EPS、PNG、JPG等格式。}}
-\label{fig:example}
-\end{center}
-\end{figure}
-
-2023-02-06： 根据@Readon的commits，做了如下修改：1. 更正了一处蓝字部分：``（三）其他需要说明的问题'' $\rightarrow$ ``（三）其他需要说明的情况'' 。这个非常重要！2. 设置 AutoFakeBold=3，这样楷体粗体稍微细一点，和官方模板更加接近。3. 调整了页面空白的宽度，大家可以自行微调。作为\LaTeX 菜鸟，非常感谢Readon的专业建议！更多专业的修改请见\url{https://github.com/Readon/NSFC-application-template-latex}
-
-2023-12-04：一转眼2024年的申请又要开始了。主要做了两点修改：1. 把图的caption字体调整为楷体。2. 设置AutoFakeBold=2，个人感觉这样和MsWord模板中的粗体更接近一点。等官方模板更新之后我再做相应更新。
-
-2023-12-30：改用GB/T 7714 (numerical) 样式以支持中文文献。 这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，这里也缩短了一些。如有需要，也可以切换回ieeetrNSFC。
-
-2024-12-25: 使用 setspace 可以调整参考文献列表的行距，使其稍微紧凑一些。如果要调大行距就把 setstretch 后面括号里的数改大看看效果。
-
-2025-03-06: 根据2025年最新MsWord模板做了更新。主要更新了:（三）其他需要说明的情况中的部分蓝字（重要）; 另外关掉了hyperref，避免编译后的pdf中参考文献号码有绿色方框。
-
-\vskip 2mm
-\subsubsection{1.1 声明}
-{\bfseries \color{red} 注意！！！非国家自然科学基金委官方模版！！！}由个人根据官方MsWord模版制作。本模版的作者尽力使本模版和官方模版生成的PDF文件视觉效果大致一样，然而，并不保证本模版有用，也不对使用本模版造成的任何直接或间接后果负责。 不得将本模版用于商用或获取经济利益。本模版可以自由修改以满足用户自己的需要。但是如果要传播本模版，则只能传播未经修改的版本。使用本模版意味着同意上述声明。
-
-祝大家基金申请顺利！如有问题，请发送邮件到 ryanzz@foxmail.com 。中了基金的也欢迎反馈。
-
-\subsubsection{1.2 使用说明}\label{sss:instruction}
-
-\begin{enumerate}
-\item 编译环境：推荐使用跨平台编译器texlive2017以后的版本，编译顺序为：xelatex+bibtex+xelatex(x2)。windows用户可以用命令行运行批处理文件getpdf.bat，linux用户可以运行runpdf。
-\item 本模版力求简单，语句自身说明问题(self explanatory）。几乎只需要修改本tex文件即可满足排版需求，没有sty cls 等文件。用户掌握最基本的\LaTeX 语句即可操作，其余的可以用搜索引擎较容易地获得。
-\item 参考文献样式：从2023.12.30版本开始，采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回ieeetrNSFC。
-\end{enumerate}
-
-\subsubsection{1.3 图、公式和参考文献的引用示例}
-尽管不大可能会用到像下面这样简单的公式：
-\begin{equation}
-\label{eq:ex}
-\sqrt[15]{a}=\frac{1}{2},
-\end{equation}
-我们还是用公式(\ref{eq:ex})举个数学公式的例子。同时，我们也不大可能会用到一个长得很像\LaTeX 的图，但是还是引用一下图\ref{fig:example}。图\ref{fig:example}并没有告诉我们关于Jinkela\cite{John1997,Smith1900}的任何信息，也没有透露它的产地\cite{Piter1992,grif1998}。尽管如此，最近的研究表明，Feizhou非常需要Jinkela\cite{John1997}。
-
-
-%从2023.12.30版本开始，采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回之前版本用的ieeetrNSFC
-%\newpage
-%\bibliographystyle{ieeetrNSFC}
-{\setstretch{1.3}
-\bibliographystyle{gbt7714-numerical}
-\bibliography{myexample}}
-\newpage
-
-{\sihao \color{MsBlue} \kaishu 2． {\bfseries 项目的研究内容、研究目标，以及拟解决的关键科学问题}（此部分为重点阐述内容）；}
-
-本项目的{\bfseries 研究目标}是获得申请面上项目的\LaTeX 模版。
-
-拟解决的{\bfseries 关键问题}包括：
-
-\begin{itemize}
-\item 中文的处理。
-\item 参考文献\cite{John1997,Smith1900,Piter1992}的样式。
-\item 官方word模版中蓝色的获得。
-\end{itemize}
-
-
-
-
-{\sihao \color{MsBlue} \kaishu 3．{\bfseries 拟采取的研究方案及可行性分析} （包括研究方法、技术路线、实验手段、关键技术等说明）；}
-
-详见1.2使用说明。
-
-{\sihao \color{MsBlue} \kaishu 4．{\bfseries 本项目的特色与创新之处；}}
-
-本模版修改自由度很高，可以按照用户自己的需求修改而不要求用户具有很多\LaTeX 技巧。
-
-
-{\sihao \color{MsBlue} \kaishu 5．{\bfseries 年度研究计划及预期研究结果}（包括拟组织的重要学术交流活动、国际合作与交流计划等）。}
-
-拟组织研讨会1次，将这个模版广而告之。但是目前还没有经费。
-
-\vskip -5mm %可以通过类似的命令微调行距以使得排版美观
-
-{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （二）研究基础与工作条件 }}
-
-{\sihao \color{MsBlue} \kaishu 1．{\bfseries 研究基础}（与本项目相关的研究工作积累和已取得的研究工作成绩）；}
-
-申请人用\LaTeX 写过几篇文章，包括自己的博士论文。
-
-{\sihao \color{MsBlue} \kaishu 2．{\bfseries 工作条件}（包括已具备的实验条件，尚缺少的实验条件和拟解决的途径，包括利用国家实验室、国家重点实验室和部门重点实验室等研究基地的计划与落实情况）；}
-
-申请人课题组具有可以编译 \LaTeX 的计算机，可以成功编译此模版。
-
-{\sihao \color{MsBlue} \kaishu 3．{\bfseries 正在承担的与本项目相关的科研项目情况}（申请人和主要参与者正在承担的与本项目相关的科研项目情况，包括国家自然科学基金的项目和国家其他科技计划项目，要注明项目的资助机构、项目类别、批准号、项目名称、获资助金额、起止年月、与本项目的关系及负责的内容等）；}
-
-无。
-
-{\sihao \color{MsBlue} \kaishu 4．{\bfseries 完成国家自然科学基金项目情况}（对申请人负责的前一个已资助期满的科学基金项目（项目名称及批准号）完成情况、后续研究进展及与本申请项目的关系加以详细说明。另附该项目的研究工作总结摘要（限500字）和相关成果详细目录）。}
-
-无。
-
-{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （三）其他需要说明的情况 }}
-
-{\sihao \color{MsBlue} \kaishu 1. 申请人同年申请不同类型的国家自然科学基金项目情况（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系；已收到自然科学基金委不予受理或不予资助决定的，无需列出）。 }
-
-无。
-
-{\sihao \color{MsBlue} \kaishu 2. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在同年申请或者参与申请国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，申请或参与申请的其他项目的项目类型、项目名称、单位名称、上述人员在该项目中是申请人还是参与者，并说明单位不一致原因。}
-
-无。
-
-{\sihao \color{MsBlue} \kaishu 3. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在与正在承担的国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，正在承担项目的批准号、项目类型、项目名称、单位名称、起止年月，并说明单位不一致原因。}
-
-无。
-
-{\sihao \color{MsBlue} \kaishu 4. 同年以不同专业技术职务（职称）申请或参与申请科学基金项目的情况（应详细说明原因）。}
-
-无。
-
-{\sihao \color{MsBlue} \kaishu 5. 其他。}
-
-无。
+	\begin{center}
+		{\sanhao \kaishu \bfseries 报告正文（2026版）}
+	\end{center}
+	
+	{\sihao \kaishu 参照以下提纲撰写，要求内容翔实、清晰，层次分明，标题突出。{\color{red} \bfseries 申请书正文原则上不超过30页，鼓励简洁表达。}{\color{MsBlue} \bfseries 请勿删除或改动下述提纲标题及括号中的文字。}}
+	\vskip -5mm
+	{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （一）立项依据}}
+	\vskip -2mm
+	{\color{MsBlue} \sihao \kaishu（为什么要开展此项研究，研究的科学技术价值如何）}
+	
+	2026年度的{\bfseries \color{Bittersweet} 面上项目}申请书正文部分模版较往年有较大改动。因此拟开展``制作新\LaTeX 模板''的研究，供参考。
+	
+	2026.01.24 根据官方模板进行了更新。
+	
+	
+	
+	\begin{figure}[!th]
+		\begin{center}
+			\includegraphics[width=2in]{fig-example.eps}
+			\caption{{\kaishu 插图可以使用EPS、PNG、JPG等格式。}}
+			\label{fig:example}
+		\end{center}
+	\end{figure}
+	
+	
+	
+	\vskip 2mm
+	\subsubsection{1. 声明}
+	{\bfseries \color{red} 注意！！！非国家自然科学基金委官方模版！！！}由个人根据官方MsWord模版制作。本模版的作者尽力使本模版和官方模版生成的PDF文件视觉效果大致一样，然而，并不保证本模版有用，也不对使用本模版造成的任何直接或间接后果负责。 不得将本模版用于商用或获取经济利益。本模版可以自由修改以满足用户自己的需要。但是如果要传播本模版，则只能传播未经修改的版本。使用本模版意味着同意上述声明。
+	
+	祝大家基金申请顺利！如有问题，请发送邮件到 ryanzz@foxmail.com 。中了基金的也欢迎反馈。
+	
+	\subsubsection{2. 使用说明}\label{sss:instruction}
+	
+	\begin{enumerate}[label=(\arabic*)]
+		\item 编译环境：推荐使用跨平台编译器texlive2024以后的版本，编译顺序为：xelatex+bibtex+xelatex(x2)。windows用户可以用命令行运行批处理文件getpdf.bat，linux用户可以运行runpdf。
+		\item 本模版力求简单，语句自身说明问题(self explanatory）。几乎只需要修改本tex文件即可满足排版需求，没有sty cls 等文件。用户掌握最基本的\LaTeX 语句即可操作，其余的可以用搜索引擎较容易地获得。
+		\item 参考文献样式：默认采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回ieeetrNSFC。
+	\end{enumerate}
+	
+	\subsubsection{3. 图、公式和参考文献的引用示例}
+	尽管不大可能会用到像下面这样简单的公式：
+	\begin{equation}
+		\label{eq:ex}
+		\sqrt[15]{a}=\frac{1}{2},
+	\end{equation}
+	我们还是用公式(\ref{eq:ex})举个数学公式的例子。同时，我们也不大可能会用到一个长得很像\LaTeX 的图，但是还是引用一下图\ref{fig:example}。图\ref{fig:example}并没有告诉我们关于Jinkela\cite{John1997,Smith1900}的任何信息，也没有透露它的产地\cite{Piter1992,grif1998}。尽管如此，最近的研究表明，Feizhou非常需要Jinkela\cite{John1997}。
+	
+	
+	%默认采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回之前版本用的ieeetrNSFC
+	%\newpage
+	%\bibliographystyle{ieeetrNSFC}
+	{\setstretch{1.3}
+		\bibliographystyle{gbt7714-numerical}
+		\bibliography{myexample}}
+	\newpage
+	
+	\vskip -5mm %可以通过类似的命令微调行距以使得排版美观
+	
+	{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （二）研究内容 }}
+	\vskip -2mm
+	{\sihao \color{MsBlue} \kaishu （提纲不做限制，请按照研究工作的自身逻辑撰写。应提炼出特色与创新点、年度研究计划）}
+	
+	本项目的{\bfseries 研究目标}是获得申请书的\LaTeX 模版。
+	
+	对应的{\bfseries 研究内容}是研究申请书的\LaTeX 模版。
+	
+	拟解决的{\bfseries 关键问题}包括：
+	
+	\begin{itemize}
+		\item 中文的处理。
+		\item 参考文献\cite{John1997,Smith1900,Piter1992}的样式。
+		\item 官方word模版中蓝色的获得。
+	\end{itemize}
+	
+	本项目的{\bfseries 特色与创新点：} 本模版修改自由度很高，可以按照用户自己的需求修改而不要求用户具有很多\LaTeX 知识。
+	
+	{\bfseries 年度研究计划：}
+	
+	做完一年再做下一年。 
+	
+	拟组织研讨会1次，将这个模版广而告之。但是目前还没有经费。
+	
+	\vskip -5mm %可以通过类似的命令微调行距以使得排版美观
+	
+	{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （三）研究基础}}
+	\vskip -2mm 
+	{\sihao \color{MsBlue} \kaishu 1．{\bfseries 研究基础与可行性分析}（与本项目相关的研究工作积累和已取得的研究工作成绩，研究风险的应对措施等）；}
+	
+	申请人用\LaTeX 写过几篇文章，包括自己的博士论文。
+	
+	{\sihao \color{MsBlue} \kaishu 2．{\bfseries 工作条件}（包括已具备的实验条件，尚缺少的实验条件和拟解决的途径，包括利用国家实验室、全国重点实验室和部门重点实验室等研究基地的计划与落实情况）；}
+	
+	申请人课题组具有可以编译 \LaTeX 的计算机，可以成功编译此模版。
+	
+	{\sihao \color{MsBlue} \kaishu 3．{\bfseries 正在承担的与本项目相关的科研项目情况}（申请人和主要参与者正在承担的与本项目相关的科研项目情况，包括国家自然科学基金的项目和国家其他科技计划项目，要注明项目的资助机构、项目类别、批准号、项目名称、获资助金额、起止年月、与本项目的关系及负责的内容等）；}
+	
+	无。
+	
+	{\sihao \color{MsBlue} \kaishu 4．{\bfseries 完成国家自然科学基金项目情况}（对申请人负责的前一个已资助期满的科学基金项目（项目名称及批准号）完成情况、后续研究进展及与本申请项目的关系加以详细说明。另附该项目的研究工作总结摘要（限500字）和相关成果详细目录）。}
+	
+	无。
+	
+	{\color{MsBlue} \subsection{\sihao \kaishu \quad \ （四）其他需要说明的情况 }}
+	
+	{\sihao \color{MsBlue} \kaishu 1. 申请人同年申请不同类型的国家自然科学基金项目情况（列明同年申请的其他项目的项目类型、项目名称信息，并说明与本项目之间的区别与联系；已收到自然科学基金委不予受理或不予资助决定的，无需列出）。}
+	
+	无。
+	
+	{\sihao \color{MsBlue} \kaishu 2. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在同年申请或者参与申请国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，申请或参与申请的其他项目的项目类型、项目名称、单位名称、上述人员在该项目中是申请人还是参与者，并说明单位不一致原因。}
+	
+	无。
+	
+	{\sihao \color{MsBlue} \kaishu 3. 具有高级专业技术职务（职称）的申请人或者主要参与者是否存在与正在承担的国家自然科学基金项目的单位不一致的情况；如存在上述情况，列明所涉及人员的姓名，正在承担项目的批准号、项目类型、项目名称、单位名称、起止年月，并说明单位不一致原因。}
+	
+	无。
+	
+	{\sihao \color{MsBlue} \kaishu 4. 同年以不同专业技术职务（职称）申请或参与申请科学基金项目的情况（应详细说明原因）。}
+	
+	无。
+	
+	{\sihao \color{MsBlue} \kaishu 5. 其他。}
+	
+	无。
+	
 \end{document}
 
 
